@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Basic -->
+  <meta name="description" content="Azzaki — Product thinker, growth marketer, and creative writer based in Depok, Indonesia. Open to freelance projects across product, marketing, research, design, and writing.">
+  <meta name="author" content="Muhammad Nafis Azzaki">
+  <meta name="keywords" content="product manager, digital marketing, copywriting, UI/UX, freelance, Depok, Indonesia, azzaki">
+
+  <!-- Open Graph — preview di LinkedIn, WhatsApp, Facebook -->
+  <meta property="og:title" content="Azzaki — Product. Marketing. Creative.">
+  <meta property="og:description" content="Product thinker, growth marketer, and creative writer based in Depok, Indonesia. Open to freelance projects and collaborations.">
+  <meta property="og:image" content="https://azzaki.netlify.app/asset/logo-blue.png">
+  <meta property="og:url" content="https://azzaki.netlify.app">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Azzaki">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Azzaki — Product. Marketing. Creative.">
+  <meta name="twitter:description" content="Product thinker, growth marketer, and creative writer based in Depok, Indonesia.">
+  <meta name="twitter:image" content="https://azzaki.netlify.app/asset/logo-blue.png">
+
+  <title>Azzaki — Product. Marketing. Creative.</title>
+  <link rel="icon" href="Asset/logo-white.png">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOADING SCREEN -->
+<div id="loader" class="loader">
+  <img src="asset/logo-white.png" class="loader-logo" alt="Azzaki">
+</div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <img src="asset/logo-white.png" class="nav-logo-img" alt="Azzaki">
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#writing">Article</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+      <h1 class="hero-title">
+        Product<br>
+        <em>thinker.</em>
+      </h1>
+      <h1 class="hero-title hero-title--outline">
+        Growth<br>marketer.
+      </h1>
+      <h1 class="hero-title">
+        Creative<br>
+        <em>writer.</em>
+      </h1>
+    </div>
+ <div class="hero-footer">
+  <p>Open to freelance projects & collaborations</p>
+  <a href="#contact" class="hero-cta">Let's talk →</a>
+  </div>
+</div>
+
+    <div class="scroll-indicator">
+  <span>scroll</span>
+  <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="work">
+
+  <div class="work-header">
+    <p class="section-label">Portfolio</p>
+    <div style="display:flex; align-items:center; gap:24px;">
+      <a href="Asset/cv-azzaki.pdf" download class="btn-cv">Download Resume ↓</a>
+      <p class="work-count">— 06 categories</p>
+    </div>
+  </div>
+
+  <div class="work-list">
+
+    <div class="work-item fade-up" onclick="openModal('product')">
+      <span class="work-number">01</span>
+      <div class="work-info">
+        <h2 class="work-title">Product Management</h2>
+        <p class="work-desc">PRD, scrum artifacts, and product case studies</p>
+      </div>
+      <div class="work-meta">
+        <span class="work-tag">Product</span>
+      </div>
+      <span class="work-arrow">→</span>
+    </div>
+
+    <div class="work-item fade-up" onclick="openModal('build')">
+      <span class="work-number">02</span>
+      <div class="work-info">
+        <h2 class="work-title">Web Development</h2>
+        <p class="work-desc">Web apps built from scratch — no framework, no template</p>
+      </div>
+      <div class="work-meta">
+        <span class="work-tag">Build</span>
+      </div>
+      <span class="work-arrow">→</span>
+    </div>
+
+    <div class="work-item fade-up" onclick="openModal('research')">
+      <span class="work-number">03</span>
+      <div class="work-info">
+        <h2 class="work-title">Research</h2>
+        <p class="work-desc">Competitor analysis, SWOT, benchmarking, and market research</p>
+      </div>
+      <div class="work-meta">
+        <span class="work-tag">Research</span>
+      </div>
+      <span class="work-arrow">→</span>
+    </div>
+
+    <div class="work-item fade-up" onclick="openModal('uiux')">
+      <span class="work-number">04</span>
+      <div class="work-info">
+        <h2 class="work-title">UI/UX</h2>
+        <p class="work-desc">Wireframes, prototypes, and website redesign concepts</p>
+      </div>
+      <div class="work-meta">
+        <span class="work-tag">UI/UX</span>
+      </div>
+      <span class="work-arrow">→</span>
+    </div>
+
+    <div class="work-item fade-up" onclick="openModal('design')">
+      <span class="work-number">05</span>
+      <div class="work-info">
+        <h2 class="work-title">Design</h2>
+        <p class="work-desc">Brand identity, corporate collateral, event & marketing design</p>
+      </div>
+      <div class="work-meta">
+        <span class="work-tag">Visual</span>
+      </div>
+      <span class="work-arrow">→</span>
+    </div>
+
+    <div class="work-item fade-up" onclick="openModal('writing')">
+      <span class="work-number">06</span>
+      <div class="work-info">
+        <h2 class="work-title">Writing</h2>
+        <p class="work-desc">Blog writing, script writing, and copywriting</p>
+      </div>
+      <div class="work-meta">
+        <span class="work-tag">Writing</span>
+      </div>
+      <span class="work-arrow">→</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO MODALS -->
+<div id="portfolioOverlay" class="portfolio-overlay" onclick="closeModal()"></div>
+
+<!-- DESIGN MODAL -->
+<div id="modal-design" class="portfolio-modal">
+  <div class="modal-top">
+    <div>
+      <div class="modal-cat-tag">Design</div>
+      <p class="modal-cat-title">Design</p>
+      <p class="modal-cat-sub">Brand identity · Corporate · Event & Marketing</p>
+    </div>
+    <button class="modal-close-btn" onclick="closeModal()">✕</button>
+  </div>
+  <div class="modal-scroll">
+
+    <div class="project-item">
+      <p class="project-title">Laundry Branding</p>
+      <p class="project-desc">Visual identity system for Misel Laundry and Rasaki Laundry — logo, color palette, outlet branding, franchise packages, and machine stickers across multiple locations.</p>
+      <div class="project-files">
+        <iframe src="porto/design/LB_Rasaki Beji 1.pdf" class="file-embed"></iframe>
+        <iframe src="porto/design/LB_Rasaki Beji 2.pdf" class="file-embed"></iframe>
+        <iframe src="porto/design/LB_Rasaki Bandung.pdf" class="file-embed"></iframe>
+        <iframe src="porto/design/LB_Misel.pdf" class="file-embed"></iframe>
+      </div>
+      <div class="project-tags"><span>Brand Identity</span><span>Print</span><span>SketchUp</span></div>
+    </div>
+
+    <div class="project-item">
+      <p class="project-title">Corporate</p>
+      <p class="project-desc">Corporate collateral for Barakaya Charcoal and Circo Farm — company profile, lanyard, and ID card design for B2B brands.</p>
+      <div class="project-files">
+        <iframe src="porto/design/C_Compro barakaya.pdf" class="file-embed"></iframe>
+        <iframe src="porto/design/C_circo.pdf" class="file-embed"></iframe>
+      </div>
+      <div class="project-tags"><span>Corporate</span><span>B2B</span><span>Print</span></div>
+    </div>
+
+    <div class="project-item">
+      <p class="project-title">Event & Marketing Design</p>
+      <p class="project-desc">Event materials and marketing visuals for Electrolux Indonesia and Thailand dealer gatherings, plus other ad-hoc design work.</p>
+      <div class="project-files">
+        <iframe src="porto/design/EMD_design.pdf" class="file-embed"></iframe>
+      </div>
+      <div class="project-tags"><span>Event</span><span>Marketing</span><span>Visual</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PRODUCT MODAL -->
+<div id="modal-product" class="portfolio-modal">
+  <div class="modal-top">
+    <div>
+      <div class="modal-cat-tag">Product Management</div>
+      <p class="modal-cat-title">Product Management</p>
+      <p class="modal-cat-sub">PRD · Scrum</p>
+    </div>
+    <button class="modal-close-btn" onclick="closeModal()">✕</button>
+  </div>
+  <div class="modal-scroll">
+
+    <div class="project-item">
+      <p class="project-title">PRD</p>
+      <p class="project-desc">Product Requirement Documents across multiple products and features — from ideation to detailed specs with user stories, success metrics, and acceptance criteria.</p>
+      <div class="project-files">
+        <iframe src="porto/PM/PRD_Periksalab.pdf" class="file-embed"></iframe>
+        <iframe src="porto/PM/PRD_A&T.pdf" class="file-embed"></iframe>
+        <iframe src="porto/PM/PRD_Momentrip.pdf" class="file-embed"></iframe>
+        <iframe src="porto/PM/PRD_Payment.pdf" class="file-embed"></iframe>
+        <iframe src="porto/PM/PRD_Periksalab.pdf" class="file-embed"></iframe>
+        <iframe src="porto/PM/PRD_Rating.pdf" class="file-embed"></iframe>
+        <iframe src="porto/PM/PRD_Search.pdf" class="file-embed"></iframe>
+        <iframe src="porto/PM/PRD_Spotify.pdf" class="file-embed"></iframe>
+        <iframe src="porto/PM/PRD_Traveloka eats.pdf" class="file-embed"></iframe>
+      </div>
+      <div class="project-tags"><span>PRD</span><span>User Stories</span><span>Product Specs</span></div>
+    </div>
+
+    <div class="project-item">
+      <p class="project-title">Scrum</p>
+      <p class="project-desc">Scrum artifacts and sprint documentation — sprint planning, backlog management, and retrospective outputs from agile product development cycles.</p>
+      <div class="project-files">
+        <iframe src="porto/PM/S_Scrum.pdf" class="file-embed"></iframe>
+      </div>
+      <div class="project-tags"><span>Agile</span><span>Scrum</span><span>Sprint</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BUILD MODAL -->
+<div id="modal-build" class="portfolio-modal">
+  <div class="modal-top">
+    <div>
+      <div class="modal-cat-tag">Web Development</div>
+      <p class="modal-cat-title">Web Development</p>
+      <p class="modal-cat-sub">Built from scratch — HTML · CSS · JavaScript</p>
+    </div>
+    <button class="modal-close-btn" onclick="closeModal()">✕</button>
+  </div>
+  <div class="modal-scroll">
+
+    <div class="project-item">
+      <p class="project-title">azzaki.id — Personal Portfolio</p>
+      <p class="project-desc">This portfolio site, built from scratch. Editorial layout with bold typography, custom cursor, scroll animations, active nav, dark gradient hero, and a hidden skate game Easter egg triggered by clicking the logo 3 times.</p>
+      <div class="project-files">
+        <iframe src="porto/web/AP_Azzaki Portfolio.pdf" class="file-embed"></iframe>
+      </div>
+      <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Netlify</span></div>
+      <a class="project-link" href="https://azzaki.netlify.app" target="_blank">azzaki.netlify.app →</a>
+    </div>
+
+    <div class="project-item">
+      <p class="project-title">Skate Log — Trick Tracker</p>
+      <p class="project-desc">Personal skate trick tracker built from scratch. Features trick toggle with localStorage persistence, live weather via Fetch API, scroll animations, and a hidden Easter egg game inside the portfolio.</p>
+      <div class="project-files">
+        <iframe src="porto/web/SL_skate Log.pdf" class="file-embed"></iframe>
+      </div>
+      <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Netlify</span></div>
+      <a class="project-link" href="https://sekatekate.netlify.app" target="_blank">sekatekate.netlify.app →</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- RESEARCH MODAL -->
+<div id="modal-research" class="portfolio-modal">
+  <div class="modal-top">
+    <div>
+      <div class="modal-cat-tag">Research</div>
+      <p class="modal-cat-title">Research</p>
+      <p class="modal-cat-sub">Competitor Analysis · SWOT · Benchmarking</p>
+    </div>
+    <button class="modal-close-btn" onclick="closeModal()">✕</button>
+  </div>
+  <div class="modal-scroll">
+
+    <div class="project-item">
+      <p class="project-title">Competitor Analysis</p>
+      <p class="project-desc">Structured competitor benchmarking across multiple industries — laundry franchise brands, digital platforms, and B2B markets. Full SWOT breakdowns with positioning recommendations.</p>
+      <div class="project-files">
+        <iframe src="porto/research/CA_website.pdf" class="file-embed"></iframe>
+        <iframe src="porto/research/CA_laundry.pdf" class="file-embed"></iframe>
+        <iframe src="porto/research/CA_paket usaha.pdf" class="file-embed"></iframe>
+        <iframe src="porto/research/CA_konten.pdf" class="file-embed"></iframe>
+        <iframe src="porto/research/CA_shopee.pdf" class="file-embed"></iframe>
+        <iframe src="porto/research/CA_swot binar.pdf" class="file-embed"></iframe>
+        <iframe src="porto/research/CA_tatok.pdf" class="file-embed"></iframe>
+      </div>
+      <div class="project-tags"><span>SWOT</span><span>Benchmarking</span><span>Strategy</span></div>
+    </div>
+
+    <div class="project-item">
+      <p class="project-title">Market & Product Research</p>
+      <p class="project-desc">Market research and product analysis — user behavior, platform analysis, and strategic recommendations for product and marketing decisions.</p>
+      <div class="project-files">
+        <iframe src="porto/research/MP_barakaya.pdf" class="file-embed"></iframe>
+        <iframe src="porto/research/MP_briket.pdf" class="file-embed"></iframe>
+        <iframe src="porto/research/MP_coca.pdf" class="file-embed"></iframe>
+        <iframe src="porto/research/MP_cola.pdf" class="file-embed"></iframe>
+        <iframe src="porto/research/MP_rtrw.pdf" class="file-embed"></iframe>
+      </div>
+      <div class="project-tags"><span>Market Research</span><span>Analysis</span><span>Strategy</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- UIUX MODAL -->
+<div id="modal-uiux" class="portfolio-modal">
+  <div class="modal-top">
+    <div>
+      <div class="modal-cat-tag">UI/UX</div>
+      <p class="modal-cat-title">UI/UX</p>
+      <p class="modal-cat-sub">Wireframes · Prototypes · Website Concepts</p>
+    </div>
+    <button class="modal-close-btn" onclick="closeModal()">✕</button>
+  </div>
+  <div class="modal-scroll">
+
+    <div class="project-item">
+      <p class="project-title">Wireframe & Concept</p>
+      <p class="project-desc">UI/UX wireframes and design concepts — from low-fidelity sketches to high-fidelity prototypes across mobile and web platforms.</p>
+      <div class="project-files">
+        <iframe src="porto/uiux/WA_binar.pdf" class="file-embed"></iframe>
+        <iframe src="porto/uiux/WA_hair care.pdf" class="file-embed"></iframe>
+        <iframe src="porto/uiux/WA_rwm.pdf" class="file-embed"></iframe>
+      </div>
+      <div class="project-tags"><span>Figma</span><span>Wireframe</span><span>Prototype</span></div>
+    </div>
+
+    <div class="project-item">
+      <p class="project-title">Website Update</p>
+      <p class="project-desc">Website improvement proposals and implementation — UX audit, redesign concepts, and feature additions for existing websites.</p>
+      <div class="project-files">
+        <iframe src="porto/uiux/WU_1.pdf" class="file-embed"></iframe>
+        <iframe src="porto/uiux/WU_2.pdf" class="file-embed"></iframe>
+        <iframe src="porto/uiux/WU_3.pdf" class="file-embed"></iframe>
+        <iframe src="porto/uiux/WU_4.pdf" class="file-embed"></iframe>
+        <iframe src="porto/uiux/WU_5.pdf" class="file-embed"></iframe>
+      </div>
+      <div class="project-tags"><span>UX</span><span>Web Design</span><span>Redesign</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- WRITING MODAL -->
+<div id="modal-writing" class="portfolio-modal">
+  <div class="modal-top">
+    <div>
+      <div class="modal-cat-tag">Writing</div>
+      <p class="modal-cat-title">Writing</p>
+      <p class="modal-cat-sub">Blog · Script · Copywriting</p>
+    </div>
+    <button class="modal-close-btn" onclick="closeModal()">✕</button>
+  </div>
+  <div class="modal-scroll">
+
+    <div class="project-item">
+      <p class="project-title">Blog Writing</p>
+      <p class="project-desc">Long-form blog writing on product management, marketing strategy, and tech — published and draft pieces covering frameworks, case studies, and personal takes.</p>
+      <div class="project-files">
+        <iframe src="porto/writing/BW_tulis.pdf" class="file-embed"></iframe>
+      </div>
+      <div class="project-tags"><span>Blog</span><span>Content</span><span>Copywriting</span></div>
+    </div>
+
+    <div class="project-item">
+      <p class="project-title">Script Writing</p>
+      <p class="project-desc">Short film scripts — Kawan Astral (horror comedy, showcased at campus screening) and Mari Pak Budi (won Favorite Award at UKM Nol Derajat Film competition).</p>
+      <div class="project-files">
+        <iframe src="porto/writing/SW_kawan astral.pdf" class="file-embed"></iframe>
+        <iframe src="porto/writing/SW_mari pak budi.pdf" class="file-embed"></iframe>
+        <iframe src="porto/writing/SW_vvip.pdf" class="file-embed"></iframe>
+      </div>
+      <div class="project-tags"><span>Screenwriting</span><span>Short Film</span><span>Award</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+
+  <div class="exp-header">
+    <p class="section-label">Experience</p>
+  </div>
+
+  <div class="exp-list">
+
+    <div class="exp-item fade-up">
+      <div class="exp-left">
+        <span class="exp-year"> Nov 2025 — Present</span>
+      </div>
+      <div class="exp-right">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <h3 class="exp-role">Digital Marketing</h3>
+          <p class="exp-company">LaundryStore</p>
+          <p class="exp-desc">Managed 182-SKU catalogue across Shopee, Tokopedia & laundrystore.id. Designed brand identities for 2 client brands across 6 outlets. Built pricing spreadsheet system and conducted competitor benchmarking via Meta Ad Library.</p>
+          <div class="exp-tags">
+            <span>Digital Marketing</span>
+            <span>Brand Identity</span>
+            <span>E-commerce</span>
+            <span>Copywriting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item fade-up">
+      <div class="exp-left">
+        <span class="exp-year">Jun — Aug 2025</span>
+      </div>
+      <div class="exp-right">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <h3 class="exp-role">HR & Marketing</h3>
+          <p class="exp-company">Laundry Trush</p>
+          <p class="exp-desc">Led end-to-end recruitment, built internal AI assistant, developed 2 SOPs and 7 operational templates, and managed daily content calendar across Instagram and TikTok.</p>
+          <div class="exp-tags">
+            <span>HR</span>
+            <span>Operations</span>
+            <span>Content</span>
+            <span>AI Tools</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item fade-up">
+      <div class="exp-left">
+        <span class="exp-year">Jul 2024 — Feb 2025</span>
+      </div>
+      <div class="exp-right">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <h3 class="exp-role">Marketing Officer</h3>
+          <p class="exp-company">Circo Farm — Freelance</p>
+          <p class="exp-desc">Represented Circo Farm at Trade Expo Indonesia, designed end-to-end brand collateral suite, and managed website content and email campaigns.</p>
+          <div class="exp-tags">
+            <span>B2B Marketing</span>
+            <span>Brand Design</span>
+            <span>Email Marketing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item fade-up">
+      <div class="exp-left">
+        <span class="exp-year">Aug — Dec 2022</span>
+      </div>
+      <div class="exp-right">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <h3 class="exp-role">Associate Product Owner</h3>
+          <p class="exp-company">Solutif — Internship</p>
+          <p class="exp-desc">Shipped 14 features from 0 to MVP across 4 agile sprints with a 6-person cross-functional team. Managed full backlog lifecycle in Jira and facilitated all scrum ceremonies.</p>
+          <div class="exp-tags">
+            <span>Product Management</span>
+            <span>Agile/Scrum</span>
+            <span>Figma</span>
+            <span>Jira</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item fade-up">
+      <div class="exp-left">
+        <span class="exp-year">Oct — Dec 2021</span>
+      </div>
+      <div class="exp-right">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <h3 class="exp-role">Product Specialist</h3>
+          <p class="exp-company">KliknClean</p>
+          <p class="exp-desc">Co-developed a new pet grooming service branch, created UI/UX prototypes in Figma, and analysed customer data using pivot tables to inform marketing strategy.</p>
+          <div class="exp-tags">
+            <span>Product</span>
+            <span>UI/UX</span>
+            <span>Data Analysis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WRITING -->
+<section class="writing-section" id="writing">
+
+  <div class="writing-header">
+    <p class="section-label">Article</p>
+    <a href="https://medium.com/@nafisazzaki" target="_blank" class="writing-more">All articles →</a>
+  </div>
+
+  <div class="writing-grid">
+
+    <a class="writing-card" href="https://nafisazzaki.medium.com/translating-ideas-through-product-manager-head-cd26a6c765a5" target="_blank">
+      <div class="writing-card-top">
+        <span class="writing-tag">Product</span>
+        <span class="writing-date">Jun 2022 · 3 min read</span>
+      </div>
+      <h3 class="writing-title">Translating Ideas Through Product Manager Head</h3>
+      <p class="writing-excerpt">As a Product Manager, it is our job to make the ideas work. Attractive, crazy, world-changing ideas always sound good — but it's down to the PM to make it realistic.</p>
+      <span class="writing-cta">Read on Medium →</span>
+    </a>
+
+    <!-- PLACEHOLDER — tambah artikel baru di sini dengan format yang sama -->
+    <div class="writing-card writing-card--empty">
+      <p class="writing-empty-text">More articles coming soon.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+  <div class="about-grid fade-up">
+
+    <div class="about-left">
+      <p class="section-label">About</p>
+      <h2 class="about-title">I think in systems.<br>I write in stories.</h2>
+      <a href="https://mail.google.com/mail/?view=cm&to=muhammadnafisazzaki@gmail.com&su=Hello%20from%20azzaki.id&body=Hi%20Nafis%2C%0A%0AI%20found%20your%20portfolio%20at%20azzaki.id%20and%20I%27d%20like%20to%20discuss%20a%20potential%20collaboration.%0A%0A" target="_blank" class="about-cta">
+        Get in touch →
+      </a>
+    </div>
+
+    <div class="about-right">
+      <p class="about-bio">
+        I've always been drawn to work that sits between disciplines. Throughout my journey, I've worked across product management, digital marketing, HR, business operations, research, design, and creative projects. That variety has given me a broader perspective on how different parts of a business connect and how good ideas become real outcomes.
+      </p>
+      <p class="about-bio">
+        My work has ranged from delivering product features with development teams, recruiting and building operational systems, managing e-commerce catalogues, conducting competitor research, creating brand identities, and helping businesses communicate their value more effectively. Regardless of the project, my focus remains the same: understand the problem, find a practical solution, and execute it well. I enjoy working on challenges that require both strategic thinking and hands-on execution.
+      </p>
+      <p class="about-bio">
+        Today, I'm primarily open to freelance projects and collaborative opportunities. Whether you need help with marketing, research, branding, content, websites, business documentation, product strategy, or a combination of several disciplines, I'm always interested in meaningful work with ambitious people. If you're building something interesting and looking for someone who can adapt quickly, learn fast, and contribute across multiple functions, I'd love to hear from you.
+      </p>
+
+      <div class="about-skills">
+        <div class="skill-group">
+          <p class="skill-label">Product</p>
+          <p class="skill-list">Agile · Scrum · PRD · Backlog · Figma · Jira</p>
+        </div>
+        <div class="skill-group">
+          <p class="skill-label">Marketing</p>
+          <p class="skill-list">Meta Ads · Content Strategy · Copywriting · Email · SEO</p>
+        </div>
+        <div class="skill-group">
+          <p class="skill-label">Creative</p>
+          <p class="skill-list">Script Writing · Brand Voice · Editorial · Storytelling</p>
+        </div>
+        <div class="skill-group">
+          <p class="skill-label">Tools</p>
+          <p class="skill-list">Canva · SketchUp · ChatGPT · Google Workspace · Trello</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+
+    <p class="section-label">Contact</p>
+
+    <h2 class="contact-title">
+      Let's build<br>
+      <em>something.</em>
+    </h2>
+
+    <p class="contact-sub">
+      I help businesses turn ideas into products, brands, and digital experiences.
+    </p>
+
+    <div class="contact-links fade-up">
+      <a href="https://mail.google.com/mail/?view=cm&to=muhammadnafisazzaki@gmail.com&su=Hello%20from%20azzaki.id&body=Hi%20Nafis%2C%0A%0AI%20found%20your%20portfolio%20at%20azzaki.id%20and%20I%27d%20like%20to%20discuss%20a%20potential%20collaboration.%0A%0A" target="_blank" class="contact-link">
+        <span>Email</span>
+        <span class="contact-link-value">muhammadnafisazzaki@gmail.com →</span>
+      </a>
+      <a href="https://linkedin.com/in/muhammadnafisazzaki" target="_blank" class="contact-link">
+        <span>LinkedIn</span>
+        <span class="contact-link-value">Muhammad Nafis Azzaki →</span>
+      </a>
+      <a href="https://www.instagram.com/kazless" target="_blank" class="contact-link">
+        <span>Instagram</span>
+        <span class="contact-link-value">@kazless →</span>
+      </a>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+  <p>© 2026 - Azzaki </p>
+  <p class="footer-hint">tap A · tap A · tap A</p>
+</footer>
+
+</section>
+
+<!-- SKATE EASTER EGG GAME -->
+<div id="skateGame" class="skate-game">
+  <div class="game-header">
+    <span class="game-title">SKATE OR DIE</span>
+    <div class="game-scores">
+      <span class="game-best">BEST: <span id="gameBest">0</span></span>
+      <span id="gameScore">0</span>
+    </div>
+    <button id="gameClose">✕</button>
+  </div>
+  <canvas id="gameCanvas" width="800" height="300"></canvas>
+  <p class="game-hint">SPACE or ↑ to ollie</p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
