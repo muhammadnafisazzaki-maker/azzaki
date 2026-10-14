@@ -51,8 +51,17 @@ sections.forEach(function(section) {
 // PORTFOLIO MODAL
 // ============================================
 function openModal(id) {
+  const modal = document.getElementById("modal-" + id);
+  if (!modal) return;
+
+  // Lazy-load PDF: src baru diisi pas modal pertama kali dibuka
+  modal.querySelectorAll("iframe[data-src]").forEach(function(frame) {
+    frame.src = frame.dataset.src;
+    frame.removeAttribute("data-src");
+  });
+
   document.getElementById("portfolioOverlay").classList.add("active");
-  document.getElementById("modal-" + id).classList.add("active");
+  modal.classList.add("active");
   document.body.style.overflow = "hidden";
   // Reasoning: lock scroll body waktu modal terbuka
 }
@@ -65,12 +74,7 @@ function closeModal() {
   document.body.style.overflow = "";
 }
 
-// Close with Escape key
-document.addEventListener("keydown", function(e) {
-  if (e.key === "Escape" && document.querySelector(".portfolio-modal.active")) {
-    closeModal();
-  }
-});
+// (Escape key ditangani di satu handler keydown di bagian game, paling bawah)
 
 // ============================================
 // 4. SKATE EASTER EGG GAME
@@ -93,14 +97,19 @@ navLogo.addEventListener("click", function() {
 
   if (logoClickCount === 3) {
     logoClickCount = 0;
-    startGame();
+    if (!skateGame.classList.contains("active")) {
+      startGame();
+    }
   }
 });
 
-gameClose.addEventListener("click", function() {
+function closeGame() {
   skateGame.classList.remove("active");
   stopGame();
-});
+  gameClose.blur(); // biar Space nggak nge-trigger tombol close lagi
+}
+
+gameClose.addEventListener("click", closeGame);
 
 // Game variables
 const canvas = document.getElementById("gameCanvas");
@@ -111,7 +120,7 @@ let gameLoop = null;
 let score = 0;
 let gameSpeed = 4;
 let frames = 0;
-let lastObstacleX = 800;
+let spawnTimer = 0;
 
 
 // Player
@@ -265,7 +274,7 @@ function spawnObstacle() {
   const minDistance = 300;
   const lastObs = obstacles[obstacles.length - 1];
   
-  if (lastObs && lastObs.x > 820 - minDistance) return;
+  if (lastObs && lastObs.x > 820 - minDistance) return false;
 
   const types = ["cone", "rail"];
   const type = types[Math.floor(Math.random() * types.length)];
@@ -275,6 +284,7 @@ function spawnObstacle() {
   } else {
     obstacles.push({ x: 820, y: 224, w: 80, h: 8, type: "rail" });
   }
+  return true;
 }
 
 function drawObstacle(obs) {
@@ -352,7 +362,7 @@ function drawGrindLabel() {
     ctx.fillStyle = "#ffaa00";
     ctx.font = "bold 16px 'Space Grotesk'";
     ctx.textAlign = "left";
-    ctx.fillText("GRIND! +" , 20, 30);
+    ctx.fillText("GRIND! +15", 20, 30);
   }
 }
 
@@ -392,64 +402,55 @@ function loop() {
   drawGrindLabel();
 
   // Difficulty label
-const level = Math.floor(score / 30) + 1;
-ctx.fillStyle = "#333";
-ctx.font = "11px 'Space Grotesk'";
-ctx.textAlign = "right";
-ctx.fillText("LVL " + level, canvas.width - 16, 24);
+  const level = Math.floor(score / 30) + 1;
+  ctx.fillStyle = "#333";
+  ctx.font = "11px 'Space Grotesk'";
+  ctx.textAlign = "right";
+  ctx.fillText("LVL " + level, canvas.width - 16, 24);
 
   frames++;
 
-  // Spawn dengan jarak minimum
-    if (frames % 60 === 0) {
-    spawnObstacle();
-    }
+  // Spawn interval makin pendek seiring score naik, wayoloo
+  // Satu-satunya titik spawn. Kalau diblok jarak minimum, dicoba lagi frame berikutnya
+  const spawnInterval = Math.max(120 - Math.floor(score / 15) * 8, 55);
+  spawnTimer++;
+  if (spawnTimer >= spawnInterval && spawnObstacle()) {
+    spawnTimer = 0;
+  }
 
-  obstacles = obstacles.filter(obs => {
-    if (obs.x + obs.w < 0) {
-      lastObstacleX = Math.min(lastObstacleX, 0);
-      return false;
-    }
-    return true;
-  });
+  // Buang obstacle yang udah lewat layar
+  obstacles = obstacles.filter(obs => obs.x + obs.w >= 0);
 
-  obstacles.forEach(obs => {
+  // for..of biar bisa berhenti langsung pas nabrak
+  for (const obs of obstacles) {
     obs.x -= gameSpeed;
-    lastObstacleX = Math.min(...obstacles.map(o => o.x));
     drawObstacle(obs);
     if (checkCollision(obs)) {
+      drawScore();
       gameOver();
-      gameRunning = false;
+      return;
     }
-  });
+  }
 
   if (frames % 6 === 0) {
-  score++;
-  
-  // Speed naik tiap 20 poin
-  gameSpeed = 4 + Math.floor(score / 20) * 0.6;
-}
+    score++;
 
-// Spawn interval makin pendek seiring score naik, wayoloo
-const spawnInterval = Math.max(120 - Math.floor(score / 15) * 8, 55);
-
-if (frames % spawnInterval === 0) {
-  spawnObstacle();
-}
+    // Speed naik tiap 20 poin
+    gameSpeed = 4 + Math.floor(score / 20) * 0.6;
+  }
 
   drawScore();
 
-  if (gameRunning) {
-    gameLoop = requestAnimationFrame(loop);
-  }
+  gameLoop = requestAnimationFrame(loop);
 }
 
 function startGame() {
+  cancelAnimationFrame(gameLoop); // cegah loop dobel
   score = 0;
   gameSpeed = 4;
   frames = 0;
+  spawnTimer = 60; // obstacle pertama muncul ~1 detik setelah mulai
   obstacles = [];
-  lastObstacleX = 800;
   player.y = 220;
   player.vy = 0;
   player.grounded = true;
@@ -476,18 +477,29 @@ function stopGame() {
   cancelAnimationFrame(gameLoop);
 }
 
+// Satu handler keyboard untuk Escape (game / modal) dan kontrol game
 document.addEventListener("keydown", function(e) {
+  const gameActive = skateGame.classList.contains("active");
+
+  if (e.code === "Escape") {
+    if (gameActive) {
+      closeGame();
+    } else if (document.querySelector(".portfolio-modal.active")) {
+      closeModal();
+    }
+    return;
+  }
+
+  // Di luar game, Space / ArrowUp tetap berfungsi normal buat scroll
+  if (!gameActive) return;
+
   if (e.code === "Space" || e.code === "ArrowUp") {
     e.preventDefault();
-    if (!gameRunning && skateGame.classList.contains("active")) {
+    if (!gameRunning) {
       startGame();
     } else {
       player.jump();
     }
-  }
-  if (e.code === "Escape") {
-    skateGame.classList.remove("active");
-    stopGame();
   }
 });
 
@@ -497,4 +509,4 @@ canvas.addEventListener("click", function() {
   } else {
     player.jump();
   }
-});
+});

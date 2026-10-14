@@ -77,7 +77,6 @@ body {
   overflow-x: hidden;
 }
 
-
 /* ============================================
    2. NAV
    ============================================ */
@@ -117,7 +116,6 @@ body {
   opacity: 0.5;
 }
 
-
 /* ============================================
    3. HERO
    ============================================ */
@@ -137,14 +135,6 @@ background-image:
 .hero-content {
   display: flex;
   flex-direction: column;
-}
-
-.hero-label {
-  font-size: 13px;
-  color: var(--gray);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 32px;
 }
 
 .hero-title {
@@ -177,7 +167,6 @@ font-family: var(--font-display);
   -webkit-text-stroke: 2px rgba(255, 255, 255, 0.3);
 }
 
-
 .hero-footer {
   display: flex;
   justify-content: space-between;
@@ -207,29 +196,6 @@ font-family: var(--font-display);
   color: var(--accent);
 }
 
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.btn-download {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--gray);
-  text-decoration: none;
-  border: 1px solid #333;
-  padding: 8px 20px;
-  border-radius: 20px;
-  transition: all 0.2s ease;
-  letter-spacing: 0.5px;
-}
-
-.btn-download:hover {
-  border-color: var(--accent);
-  color: var(--white);
-}
-
 .scroll-indicator {
   position: absolute;
   bottom: 48px;
@@ -254,13 +220,17 @@ font-family: var(--font-display);
   animation: scrollPulse 2s ease infinite;
 }
 
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translate(-50%, -12px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
 @keyframes scrollPulse {
   0% { transform: scaleY(0); transform-origin: top; }
   50% { transform: scaleY(1); transform-origin: top; }
   51% { transform: scaleY(1); transform-origin: bottom; }
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
-
 
 /* ============================================
    4. RESPONSIVE
@@ -353,7 +323,7 @@ font-family: var(--font-display);
   text-decoration: none;
   color: var(--black);
   transition: all 0.3s ease;
-  cursor: none;
+  cursor: pointer;
 }
 
 .work-item:hover {
@@ -407,11 +377,6 @@ font-family: var(--font-display);
   color: var(--white);
   padding: 4px 10px;
   border-radius: 20px;
-}
-
-.work-year {
-  font-size: 12px;
-  color: #888;
 }
 
 .work-arrow {
@@ -915,7 +880,6 @@ font-family: var(--font-display);
   }
 }
 
-
 /* ============================================
    14. SCROLL ANIMATION
    ============================================ */
@@ -929,7 +893,6 @@ font-family: var(--font-display);
   opacity: 1;
   transform: translateY(0);
 }
-
 
 /* ============================================
    15. ACTIVE NAV
@@ -1013,7 +976,7 @@ font-family: var(--font-display);
   height: 32px;
   border-radius: 50%;
   font-size: 14px;
-  cursor: none;
+  cursor: pointer;
   transition: border-color 0.2s ease;
 }
 
@@ -1128,7 +1091,7 @@ font-family: var(--font-display);
   height: 32px;
   border-radius: 50%;
   font-size: 14px;
-  cursor: none;
+  cursor: pointer;
   transition: all 0.2s ease;
   flex-shrink: 0;
 }
@@ -1181,28 +1144,12 @@ font-family: var(--font-display);
   margin-bottom: 16px;
 }
 
-.project-files {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-bottom: 14px;
-}
-
 .file-embed {
   width: 100%;
   height: 280px;
   border: 0.5px solid #222;
   border-radius: 8px;
   background: #1a1a1a;
-}
-
-.file-img {
-  width: 100%;
-  height: auto;
-  border: 0.5px solid #222;
-  border-radius: 8px;
-  object-fit: cover;
-  display: block;
 }
 
 .project-files {
@@ -1254,8 +1201,4 @@ font-family: var(--font-display);
   .portfolio-modal.active {
     transform: translateY(0);
   }
-
-  .project-files {
-    grid-template-columns: 1fr;
-  }
-}
+}
